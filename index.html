@@ -75,6 +75,10 @@ section.pub-section { padding: 0; overflow: hidden; }
 .item p { color: var(--muted); font-size: 15px; text-align: left; }
 .award { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 12px; align-items: start; }
 .award-ico { width: 20px; height: 20px; margin-top: 1px; color: #6c757d; }
+.edu-item { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 16px; align-items: start; }
+.logo { position: relative; width: 56px; height: 56px; }
+.logo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; display: block; }
+.logo span { position: absolute; inset: 0; border: 1px dashed #c3c8ce; background: var(--section-alt-bg); display: grid; place-items: center; color: var(--muted); font-size: 11px; }
 .years { display: block; color: var(--muted); font-size: 14px; margin-bottom: 2px; }
 
 /* Publication cards */
@@ -177,15 +181,23 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
           <div>
             <h2><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/><path d="M22 10v6"/></svg>Education</h2>
             <div class="items">
-              <div class="item">
+              <div class="item edu-item">
+                <!-- LOGO: upload as ntu-logo.png next to this file -->
+                <div class="logo"><img src="ntu-logo.png" alt="NTU logo" onload="this.nextElementSibling.remove()" onerror="this.remove()"><span>Logo</span></div>
+                <div>
                 <span class="years">2024 to 2025</span>
                 <h3>MSc in Computer and Communications Engineering</h3>
                 <p>School of EEE, Nanyang Technological University (NTU), Singapore.</p>
+                </div>
               </div>
-              <div class="item">
+              <div class="item edu-item">
+                <!-- LOGO: upload as mahe-logo.png next to this file -->
+                <div class="logo"><img src="mahe-logo.png" alt="MAHE logo" onload="this.nextElementSibling.remove()" onerror="this.remove()"><span>Logo</span></div>
+                <div>
                 <span class="years">2017 to 2021</span>
                 <h3>BTech, Electronics and Communication Engineering</h3>
                 <p>Manipal Institute of Technology, MAHE. Specialization in Machine Learning and Data Science.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -200,8 +212,8 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
         <div class="pubs">
 
           <div class="pub">
-            <!-- THUMBNAIL: upload as images/pub-inverse-folding.png -->
-            <div class="thumb"><img src="images/pub-inverse-folding.png" alt="" onload="this.nextElementSibling.remove()" onerror="this.remove()"><span>Image</span></div>
+            <!-- THUMBNAIL: upload as pub-inverse-folding.png -->
+            <div class="thumb"><img src="pub-inverse-folding.png" alt="" onload="this.nextElementSibling.remove()" onerror="this.remove()"><span>Image</span></div>
             <div class="pub-body">
               <h3><a href="https://dl.acm.org/doi/10.1145/3770855.3818896" target="_blank" rel="noopener">From Structure to Function: Preference Alignment for Function-Aware Protein Inverse Folding</a></h3>
               <p class="authors"><strong>N. Tamatgar*</strong>, S. Park*, Y. Yao*<sup>#</sup>, X. Chen, Y. Pan</p>
@@ -216,8 +228,8 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
           </div>
 
           <div class="pub">
-            <!-- THUMBNAIL: upload as images/pub-precision.png -->
-            <div class="thumb"><img src="images/pub-precision.png" alt="" onload="this.nextElementSibling.remove()" onerror="this.remove()"><span>Image</span></div>
+            <!-- THUMBNAIL: upload as pub-precision.png -->
+            <div class="thumb"><img src="pub-precision.png" alt="" onload="this.nextElementSibling.remove()" onerror="this.remove()"><span>Image</span></div>
             <div class="pub-body">
               <h3>Precision Inverse Folding: From Low-Order Mutant Measurements to Higher-Order Variant Prioritization</h3>
               <p class="venue"><em>Conference on Neural Information Processing Systems (NeurIPS), AI4DD Workshop</em> 2026 <span class="badge outline">Accepted</span></p>
@@ -225,8 +237,8 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
           </div>
 
           <div class="pub">
-            <!-- THUMBNAIL: upload as images/pub-random-forest.png -->
-            <div class="thumb"><img src="images/pub-random-forest.png" alt="" onload="this.nextElementSibling.remove()" onerror="this.remove()"><span>Image</span></div>
+            <!-- THUMBNAIL: upload as pub-random-forest.png -->
+            <div class="thumb"><img src="pub-random-forest.png" alt="" onload="this.nextElementSibling.remove()" onerror="this.remove()"><span>Image</span></div>
             <div class="pub-body">
               <h3><a href="https://dl.acm.org/doi/10.1145/3651781.3651811" target="_blank" rel="noopener">Deployment of Random Forest Algorithm for prediction of ammonia in river water</a></h3>
               <p class="authors">Soumya S, <strong>N. Tamatgar</strong>, R. Dilli, Kanthi M</p>
@@ -238,8 +250,8 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
           </div>
 
           <div class="pub">
-            <!-- THUMBNAIL: upload as images/pub-ammonia-ml.png -->
-            <div class="thumb"><img src="images/pub-ammonia-ml.png" alt="" onload="this.nextElementSibling.remove()" onerror="this.remove()"><span>Image</span></div>
+            <!-- THUMBNAIL: upload as pub-ammonia-ml.png -->
+            <div class="thumb"><img src="pub-ammonia-ml.png" alt="" onload="this.nextElementSibling.remove()" onerror="this.remove()"><span>Image</span></div>
             <div class="pub-body">
               <h3><a href="https://ieeexplore.ieee.org/abstract/document/10331860" target="_blank" rel="noopener">Machine Learning Approach for Prediction of Ammonia in Freshwater Bodies</a></h3>
               <p class="authors"><strong>N. Tamatgar</strong>, Soumya S, R. Dilli, Kanthi M</p>
