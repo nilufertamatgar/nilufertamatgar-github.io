@@ -3,304 +3,316 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nilufer Tamatgar | AI Researcher</title>
+<title>Homepage - Nilufer Tamatgar</title>
 <meta name="description" content="Nilufer Tamatgar is an AI researcher working on Generative models, LLM fine-tuning and AI for science, with applications in drug discovery.">
 <meta property="og:title" content="Nilufer Tamatgar | AI Researcher">
 <meta property="og:description" content="AI Researcher - building and fine-tuning Generative models, with applications in drug discovery.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%235980a6'/%3E%3Ctext x='32' y='46' font-family='Arial,sans-serif' font-weight='600' font-size='40' text-anchor='middle' fill='%23ffffff'%3EN%3C/text%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!--<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">-->
 <style>
 /* ===== EDIT COLORS HERE ===== */
 :root {
-  --page-bg: #ffffff;       /* page background */
-  --section-alt-bg: #f5f6f8;/* background of alternating sections */
-  --text: #1d1f20;          /* main text */
-  --muted: #5d6166;         /* secondary text */
-  --accent: #3f6890;        /* links, highlights */
-  --line: #e3e5e8;          /* thin divider lines */
+  --page-bg: #ffffff;
+  --section-alt-bg: #f5f6f8;
+  --text: #1d1f20;
+  --muted: #5d6166;
+  --accent: #3f6890;
+  --accent-dark: #2f5274;
+  --line: #e3e5e8;
 }
 /* ============================ */
 
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; background: var(--page-bg); color: var(--text); font-family: "Times New Roman", Times, serif; font-size: 16px; line-height: 1.7; }
-h1, h2, h3 { font-family: "Times New Roman", Times, serif; font-weight: 600; line-height: 1.15; letter-spacing: -0.02em; margin: 0; }
+body { margin: 0; background: var(--section-alt-bg); color: var(--text); font-family: "Times New Roman", Times, serif; font-size: 16px; line-height: 1.65; }
+h1, h2, h3 { font-weight: 600; line-height: 1.2; margin: 0; }
 p { margin: 0; text-align: justify; hyphens: auto; }
 a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
+a:hover { color: var(--accent-dark); text-decoration: underline; }
 a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+.wrap { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
 
-/* Header */
-header { border-bottom: 1px solid var(--line); background: var(--page-bg); position: sticky; top: 0; z-index: 10; }
-header .wrap { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px 24px; padding-top: 16px; padding-bottom: 16px; }
-.brand { font-family: "Times New Roman", Times, serif; font-size: 20px; letter-spacing: -0.01em; font-weight: 600; color: var(--text); }
-.brand:hover { text-decoration: none; }
-nav { display: flex; flex-wrap: wrap; gap: 4px 24px; font-size: 16px; }
+/* Top navbar */
+header { position: sticky; top: 0; z-index: 10; background: var(--page-bg); box-shadow: 0 2px 10px rgba(0,0,0,.06); }
+header .wrap { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px 24px; padding-top: 14px; padding-bottom: 14px; }
+.brand { font-size: 20px; font-weight: 600; color: var(--text); }
+.brand:hover { color: var(--text); text-decoration: none; }
+nav { display: flex; flex-wrap: wrap; gap: 4px 22px; font-size: 16px; }
 nav a { color: var(--muted); }
 nav a:hover { color: var(--text); text-decoration: none; }
 
-/* Intro */
-.intro { display: grid; grid-template-columns: minmax(0, 280px) minmax(0, 1fr); gap: 56px; align-items: start; padding: 72px 0 80px; }
-.photo { aspect-ratio: 4 / 5; background: var(--section-alt-bg); border: 1px dashed #c3c8ce; display: grid; place-items: center; color: var(--muted); font-size: 14px; overflow: hidden; }
-.photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.intro h1 { font-size: clamp(44px, 6vw, 64px); margin-bottom: 6px; }
-.role { font-size: 19px; color: var(--muted); margin-bottom: 28px; }
-.bio { display: grid; gap: 16px; }
-.links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
-/* Sections */
-section.block { padding: 72px 0; border-top: 1px solid var(--line); scroll-margin-top: 64px; }
-section.alt { background: var(--section-alt-bg); }
-section.block h2 { font-size: 36px; margin-bottom: 32px; }
+/* Two-column layout */
+.layout { display: grid; grid-template-columns: 245px minmax(0, 1fr); gap: 28px; align-items: start; padding: 48px 0 72px; }
 
-/* Publications */
+/* Sticky profile card */
+.profile { position: sticky; top: 88px; background: var(--page-bg); border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,.08); padding: 20px; text-align: center; }
+.photo { position: relative; aspect-ratio: 1 / 1; width: 100%; background: var(--section-alt-bg); display: grid; place-items: center; color: var(--muted); font-size: 14px; overflow: hidden; }
+.photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+.profile-body { display: grid; gap: 4px; padding-top: 14px; }
+.profile h1 { font-size: 24px; }
+.profile .title { color: var(--text); font-size: 15px; text-align: center; margin-bottom: 12px; }
+.contact { display: flex; justify-content: center; gap: 12px; }
+.contact a { display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid #c9ccd1; border-radius: 50%; color: var(--text); background: var(--page-bg); transition: background .15s, color .15s, border-color .15s; }
+.contact a:hover { background: var(--text); border-color: var(--text); color: #fff; text-decoration: none; }
+.contact svg { width: 16px; height: 16px; fill: currentColor; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+/* Sections */
+.content { display: grid; gap: 20px; }
+section { scroll-margin-top: 80px; background: var(--page-bg); border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,.06); padding: 24px 28px; }
+section h2 { font-size: 28px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+.ico { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+section.pub-section { padding: 0; overflow: hidden; }
+.pub-head { display: flex; align-items: center; gap: 10px; padding: 16px 20px; border-bottom: 1px solid var(--line); }
+.pub-head h2 { font-size: 21px; margin: 0; }
+.pub-head svg { width: 18px; height: 18px; fill: var(--text); }
+.bio { display: grid; gap: 14px; }
+
+/* Education & Experience side by side */
+.split { display: grid; gap: 40px; }
+.items { display: grid; gap: 20px; }
+.item h3 { font-size: 17px; }
+.item p { color: var(--muted); font-size: 15px; text-align: left; }
+.award { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 12px; align-items: start; }
+.award-ico { width: 20px; height: 20px; margin-top: 1px; color: #6c757d; }
+.years { display: block; color: var(--muted); font-size: 14px; margin-bottom: 2px; }
+
+/* Publication cards */
 .pubs { display: grid; }
-.pub { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 8px 32px; padding: 22px 0; border-bottom: 1px solid var(--line); }
-.pub:first-child { padding-top: 0; }
-.venue { font-family: "Times New Roman", Times, serif; font-size: 17px; font-weight: 600; color: var(--text); line-height: 1.2; }
-.venue span { display: block; font-family: "Times New Roman", Times, serif; font-size: 13px; font-weight: 500; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; margin-top: 4px; }
-.pub h3 { font-family: "Times New Roman", Times, serif; font-size: 18px; font-weight: 600; line-height: 1.4; }
-.pub h3 a { color: var(--accent); }
-.pub h3 a:hover { color: #2f5274; text-decoration: underline; }
-.pub p { color: var(--muted); font-size: 15px; margin-top: 6px; }
-.badge { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent); padding: 1px 8px; margin-left: 8px; vertical-align: 2px; }
+.pub { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 18px; padding: 18px 20px; border-top: 1px solid var(--line); }
+.pub:first-child { border-top: 0; }
+.thumb { position: relative; align-self: start; aspect-ratio: 3 / 2; overflow: hidden; border: 1px solid var(--line); background: #fff; }
+.thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+.thumb span { position: absolute; inset: 0; aspect-ratio: 3 / 2; background: var(--section-alt-bg); border: 1px dashed #c3c8ce; display: grid; place-items: center; color: var(--muted); font-size: 13px; }
+.pub-body { display: grid; gap: 4px; align-content: start; }
+.badges { display: flex; flex-wrap: wrap; gap: 6px; }
+.pub h3 { font-size: 19px; font-weight: 400; line-height: 1.3; }
+.pub h3 a { color: var(--text); }
+.pub h3 a:hover { color: var(--accent); }
+.authors { font-size: 15px; text-align: left; }
+.venue { font-size: 15px; text-align: left; }
+.badge { display: inline-block; font-style: normal; font-size: 12px; font-weight: 700; color: #fff; background: #28a745; padding: 1px 9px; border-radius: 999px; margin-left: 4px; vertical-align: 1px; }
+.badge.outline { color: var(--accent); background: transparent; border: 1px solid var(--accent); }
+.pub-links { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 15px; }
 
 /* Skills */
-.skills { display: grid; }
-.skill { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 6px 32px; padding: 16px 0; border-bottom: 1px solid var(--line); }
-.skill h3 { font-family: "Times New Roman", Times, serif; font-size: 16px; font-weight: 600; }
-.skill p { color: var(--muted); font-size: 16px; }
+.rows { display: grid; }
+.row { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 4px 28px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.row:first-child { padding-top: 0; }
+.row h3 { font-size: 16px; }
+.row p { color: var(--muted); font-size: 15px; }
 
-/* Education */
-.edu { display: grid; gap: 28px; }
-.edu-item { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 6px 32px; }
-.edu-item .years { color: var(--muted); font-size: 16px; }
-.edu-item h3 { font-family: "Times New Roman", Times, serif; font-size: 18px; font-weight: 600; }
-.edu-item p { color: var(--muted); font-size: 16px; }
-
-footer { border-top: 1px solid var(--line); padding: 28px 0; color: var(--muted); font-size: 14px; }
+footer { background: var(--page-bg); border-top: 1px solid var(--line); padding: 24px 0; color: var(--muted); font-size: 14px; }
 footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
 
-@media (max-width: 760px) {
-  .intro { grid-template-columns: 1fr; gap: 32px; padding-top: 40px; }
-  .photo { max-width: 280px; }
-  .pub, .skill, .edu-item { grid-template-columns: 1fr; }
+@media (max-width: 860px) {
+  .layout { grid-template-columns: 1fr; gap: 40px; padding-top: 32px; }
+  .profile { position: static; }
+  .photo { max-width: 180px; }
+  .split, .pub, .row { grid-template-columns: 1fr; }
+  .thumb { max-width: 320px; }
+  section { padding: 24px 20px; }
+  .pub { padding: 22px 20px; }
 }
-.list { margin: 0; padding-left: 18px; display: grid; gap: 8px; color: var(--muted); font-size: 16px; }
-.list li { text-align: justify; }
-.links { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--line); }
-.links a { display: inline-flex; align-items: center; gap: 8px; color: var(--accent); font-size: 15px; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
-.links a:hover { color: #2f5274; text-decoration-thickness: 2px; }
-.links svg { width: 18px; height: 18px; fill: currentColor; flex-shrink: 0; }
-.links a:hover svg { fill: var(--accent); }
 </style>
 </head>
 <body>
 
 <header>
   <div class="wrap">
-    <a href="#" class="brand">Nilufer Tamatgar</a>
+    <a href="#" class="brand" title="Homepage - Nilufer Tamatgar">Nilufer Tamatgar</a>
     <nav>
       <a href="#about">About</a>
+      <a href="#education">Education</a>
       <a href="#publications">Publications</a>
       <a href="#skills">Skills</a>
-      <a href="#education">Education</a>
-      <a href="#achievements">Achievements</a>
+      <a href="#awards">Awards</a>
       <a href="#leadership">Leadership</a>
-      <a href="#Extracurricular">Extra-Curricular</a>
+      <a href="#extracurricular">Extra-Curricular</a>
     </nav>
   </div>
 </header>
 
-<main>
-  <div class="wrap">
-    <div class="intro" id="about">
-      <!-- PHOTO: upload your photo to the repo as "photo.jpg" (same folder as this file). Until then a placeholder shows. -->
+<div class="wrap">
+  <div class="layout">
+
+    <aside class="profile">
+      <!-- PHOTO: upload as "photo.jpg" next to this file -->
       <div class="photo">
         <img src="photo.jpg" alt="Nilufer Tamatgar" onerror="this.remove()">
         <span>Photo</span>
       </div>
-      <div>
-        <h1>Nilufer Tamatgar</h1>
-<!--        <p class="role">AI Researcher</p>-->
+      <div class="profile-body">
+      <h1>Nilufer Tamatgar</h1>
+      <p class="title">AI Researcher</p>
+      <div class="contact">
+        <a href="mailto:nilufer001@e.ntu.edu.sg" title="Email">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 4h20v16H2V4zm2 2v.5l8 5 8-5V6H4zm16 2.85l-8 5-8-5V18h16V8.85z"/></svg>
+          <span class="sr">Email</span>
+        </a>
+        <a href="https://www.linkedin.com/in/nilufer-tamatgar-8a2251196" target="_blank" rel="noopener" title="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          <span class="sr">LinkedIn</span>
+        </a>
+        <a href="https://github.com/nilufertamatgar" target="_blank" rel="noopener" title="GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3.92.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.910 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          <span class="sr">GitHub</span>
+        </a>
+      </div>
+      </div>
+    </aside>
+
+    <main class="content">
+
+      <section id="about">
+        <h2><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>About</h2>
         <div class="bio">
           <p>As an AI Researcher at A*STAR CFAR, I specialized in deep generative models for protein engineering and drug discovery. I contributed to a sequence–structure co-design framework that uses functional guidance from both sequence and structure to design proteins with targeted functions, preserving the intended 3D structure and the conformations of critical residues. My research advanced Transformer, diffusion, and graph-based neural architectures through supervised fine-tuning, preference optimization, and ranking objectives, addressing the challenge of learning from sparse experimental measurements to maximize the precision of a model's top-ranked predictions, with all models validated on real-world experimental data.</p>
           <p>Earlier in my career, I built a strong engineering foundation spanning full-stack application development, machine learning deployment, hardware and wireless systems, including IoT architectures, wireless sensor networks, and wideband antenna design.</p>
         </div>
-          <div class="links">
-          <a href="https://scholar.google.com/citations?hl=en&amp;user=itp-GMwAAAAJ" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
-            Google Scholar
-          </a>
-          <a href="https://www.linkedin.com/in/nilufer-tamatgar-8a2251196" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            LinkedIn
-          </a>
-          <a href="https://github.com/nilufertamatgar" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3.92.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-            GitHub
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
+      </section>
 
-  <section class="block alt" id="publications">
-    <div class="wrap">
-      <h2>Publications</h2>
-      <div class="pubs">
-        <div class="pub">
-          <div class="venue">KDD 2026<span>AI4Sciences</span></div>
+      <section id="education">
+        <div class="split">
           <div>
-            <h3><a href="https://dl.acm.org/doi/10.1145/3770855.3818896" target="_blank" rel="noopener">From Structure to Function: Preference Alignment for Function-aware Protein Inverse Folding</a></h3>
+            <h2><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/><path d="M22 10v6"/></svg>Education</h2>
+            <div class="items">
+              <div class="item">
+                <span class="years">2024 to 2025</span>
+                <h3>MSc in Computer and Communications Engineering</h3>
+                <p>School of EEE, Nanyang Technological University (NTU), Singapore.</p>
+              </div>
+              <div class="item">
+                <span class="years">2017 to 2021</span>
+                <h3>BTech, Electronics and Communication Engineering</h3>
+                <p>Manipal Institute of Technology, MAHE. Specialization in Machine Learning and Data Science.</p>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="pub">
-          <div class="venue">ICLR 2026<span>GEM Workshop</span></div>
-          <div>
-            <h3><a href="https://openreview.net/forum?id=sTEolR8Nn7" target="_blank" rel="noopener">From Structure to Function: Preference Alignment for Function-Aware Protein Inverse Folding</a></h3>
+      </section>
+
+      <section id="publications" class="pub-section">
+        <div class="pub-head">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <h2>Publications</h2>
+        </div>
+        <div class="pubs">
+
+          <div class="pub">
+            <!-- THUMBNAIL: upload as images/pub-inverse-folding.png -->
+            <div class="thumb"><img src="images/pub-inverse-folding.png" alt="" onload="this.nextElementSibling.remove()" onerror="this.remove()"><span>Image</span></div>
+            <div class="pub-body">
+              <h3><a href="https://dl.acm.org/doi/10.1145/3770855.3818896" target="_blank" rel="noopener">From Structure to Function: Preference Alignment for Function-Aware Protein Inverse Folding</a></h3>
+              <p class="authors"><strong>N. Tamatgar*</strong>, S. Park*, Y. Yao*<sup>#</sup>, X. Chen, Y. Pan</p>
+              <p class="venue"><em>SIGKDD Conference on Knowledge Discovery and Data Mining (KDD)</em> 2026 <span class="badge">CCF A</span></p>
+              <p class="venue"><em>International Conference on Learning Representations (ICLR), GEM Workshop</em> 2026</p>
+              <div class="pub-links">
+                <a href="https://dl.acm.org/doi/epdf/10.1145/3770855.3818896" target="_blank" rel="noopener">[PDF · KDD]</a>
+                <a href="https://openreview.net/pdf?id=sTEolR8Nn7" target="_blank" rel="noopener">[PDF · ICLR GEM]</a>
+                <a href="https://github.com/nilufertamatgar/Function-Aware-Protein-Inverse-Folding" target="_blank" rel="noopener">[Code]</a>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="pub">
-          <div class="venue">NeurIPS 2026<span>AI4DD Workshop</span></div>
-          <div>
-            <h3>Precision Inverse Folding: From Low-Order Mutant Measurements to Higher-Order Variant Prioritization <span class="badge">Accepted</span></h3>
+
+          <div class="pub">
+            <!-- THUMBNAIL: upload as images/pub-precision.png -->
+            <div class="thumb"><img src="images/pub-precision.png" alt="" onload="this.nextElementSibling.remove()" onerror="this.remove()"><span>Image</span></div>
+            <div class="pub-body">
+              <h3>Precision Inverse Folding: From Low-Order Mutant Measurements to Higher-Order Variant Prioritization</h3>
+              <p class="venue"><em>Conference on Neural Information Processing Systems (NeurIPS), AI4DD Workshop</em> 2026 <span class="badge outline">Accepted</span></p>
+            </div>
           </div>
-        </div>
-        <div class="pub">
-          <div class="venue">ACM DL<span>2024</span></div>
-          <div>
-            <h3><a href="https://dl.acm.org/doi/10.1145/3651781.3651811" target="_blank" rel="noopener">Deployment of Random Forest Algorithm for prediction of ammonia in river water</a></h3>
+
+          <div class="pub">
+            <!-- THUMBNAIL: upload as images/pub-random-forest.png -->
+            <div class="thumb"><img src="images/pub-random-forest.png" alt="" onload="this.nextElementSibling.remove()" onerror="this.remove()"><span>Image</span></div>
+            <div class="pub-body">
+              <h3><a href="https://dl.acm.org/doi/10.1145/3651781.3651811" target="_blank" rel="noopener">Deployment of Random Forest Algorithm for prediction of ammonia in river water</a></h3>
+              <p class="authors">Soumya S, <strong>N. Tamatgar</strong>, R. Dilli, Kanthi M</p>
+              <p class="venue"><em>ACM Digital Library</em> 2024</p>
+              <div class="pub-links">
+                <a href="https://dl.acm.org/doi/epdf/10.1145/3651781.3651811" target="_blank" rel="noopener">[PDF]</a>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="pub">
-          <div class="venue">IEEE Xplore<span>2023</span></div>
-          <div>
-            <h3><a href="https://ieeexplore.ieee.org/abstract/document/10331860" target="_blank" rel="noopener">Machine Learning Approach for Prediction of Ammonia in Freshwater Bodies</a></h3>
+
+          <div class="pub">
+            <!-- THUMBNAIL: upload as images/pub-ammonia-ml.png -->
+            <div class="thumb"><img src="images/pub-ammonia-ml.png" alt="" onload="this.nextElementSibling.remove()" onerror="this.remove()"><span>Image</span></div>
+            <div class="pub-body">
+              <h3><a href="https://ieeexplore.ieee.org/abstract/document/10331860" target="_blank" rel="noopener">Machine Learning Approach for Prediction of Ammonia in Freshwater Bodies</a></h3>
+              <p class="authors"><strong>N. Tamatgar</strong>, Soumya S, R. Dilli, Kanthi M</p>
+              <p class="venue"><em>IEEE Xplore</em> 2023</p>
+              <div class="pub-links">
+                <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=10331860" target="_blank" rel="noopener">[PDF]</a>
+              </div>
+            </div>
           </div>
+
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <section class="block" id="skills">
-  <div class="wrap">
-    <h2>Skills and Tools</h2>
-    <div class="skills">
-      <div class="skill">
-        <h3>Generative AI and Deep Learning</h3>
-        <p>Transformer Models, Diffusion Models, Graph Neural Networks (GNNs), Supervised Fine-Tuning (SFT), Preference Optimization, Data-Efficient Learning</p>
-      </div>
-
-      <div class="skill">
-        <h3>Applied ML & Evaluation</h3>
-        <p>Predictive Modeling, Ranking Models, Candidate Prioritization, Benchmarking, Model Evaluation</p>
-      </div>
-
-      <div class="skill">
-        <h3>ML Engineering & Orchestration</h3>
-        <p>Retrieval-Augmented Generation (RAG), LangChain, Multimodal Data Curation, ML Pipelines, Model Deployment</p>
-      </div>
-
-      <div class="skill">
-        <h3>AI for Science</h3>
-        <p>AlphaFold 3, ColabFold, RFdiffusion, ProteinMPNN, LigandMPNN, ESM, ESM-IF, ADFLIP, SIFT and SIFT4G, PyMOL, UCSF Chimera</p>
-      </div>
-
-      <div class="skill">
-        <h3>Programming & Infrastructure</h3>
-        <p>Python, C++, PyTorch, Web App Development, High-Performance Computing, Containerized Workflows</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <section class="block alt" id="education">
-    <div class="wrap">
-      <h2>Education</h2>
-      <div class="edu">
-        <div class="edu-item">
-          <div class="years">2024 to 2025</div>
-          <div>
-            <h3>MSc, Computer and Communication Engineering</h3>
-            <p>Nanyang Technological University.</p>
-          </div>
+      <section id="skills">
+        <h2><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>Skills and Tools</h2>
+        <div class="rows">
+          <div class="row"><h3>Generative AI and Deep Learning</h3><p>Transformer Models, Diffusion Models, Graph Neural Networks (GNNs), Supervised Fine-Tuning (SFT), Preference Optimization, Data-Efficient Learning</p></div>
+          <div class="row"><h3>Applied ML &amp; Evaluation</h3><p>Predictive Modeling, Ranking Models, Candidate Prioritization, Benchmarking, Model Evaluation</p></div>
+          <div class="row"><h3>ML Engineering &amp; Orchestration</h3><p>Retrieval-Augmented Generation (RAG), LangChain, Multimodal Data Curation, ML Pipelines, Model Deployment</p></div>
+          <div class="row"><h3>AI for Science</h3><p>AlphaFold 3, ColabFold, RFdiffusion, ProteinMPNN, LigandMPNN, ESM, ESM-IF, ADFLIP, SIFT and SIFT4G, PyMOL, UCSF Chimera</p></div>
+          <div class="row"><h3>Programming &amp; Infrastructure</h3><p>Python, C++, PyTorch, Web App Development, High-Performance Computing, Containerized Workflows</p></div>
         </div>
-        <div class="edu-item">
-          <div class="years">2017 to 2021</div>
-          <div>
-            <h3>BTech, Electronics and Communication Engineering</h3>
-            <p>Manipal Institute of Technology, MAHE. Specialization in Machine Learning and Data Science.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
-<section class="block" id="achievements">
-    <div class="wrap">
-      <h2>Achievements</h2>
-      <div class="edu">
-        <div>
-          <h3>EEE Excellence Award</h3>
-          <p>School of Electrical and Electronic Engineering, Nanyang Technological University (NTU), Singapore. Recognised for Academic Excellence, Research contributions, Leadership and community engagement during the MSc programme.</p>
-        </div>
-        <div>
-          <h3>Academic Excellence Award</h3>
-          <p>Awarded for securing first place in Pre-University examinations at New Era High School, Panchgani.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <section class="block alt" id="leadership">
-    <div class="wrap">
-      <h2>Leadership</h2>
-      <div class="edu">
-        <div class="edu-item">
-          <div class="years">2024 to 2025</div>
-          <div>
+      <section id="awards">
+        <h2><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/></svg>Awards</h2>
+        <div class="items">
+          <div class="item award"><svg class="award-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="7" fill="currentColor"/><circle cx="12" cy="9" r="3.2" fill="#fff"/><path d="M8.2 14.6 6.5 22l5.5-2.6 5.5 2.6-1.7-7.4" fill="currentColor"/></svg><div>
+            <h3>EEE Excellence Award</h3>
+            <p>School of Electrical and Electronic Engineering, Nanyang Technological University (NTU), Singapore. Recognised for Academic Excellence, Research contributions, Leadership and community engagement during the MSc programme.</p>
+          </div></div>
+          <div class="item award"><svg class="award-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="7" fill="currentColor"/><circle cx="12" cy="9" r="3.2" fill="#fff"/><path d="M8.2 14.6 6.5 22l5.5-2.6 5.5 2.6-1.7-7.4" fill="currentColor"/></svg><div>
+            <h3>Academic Excellence Award</h3>
+            <p>Awarded for securing first place in Pre-University examinations at New Era High School, Panchgani.</p>
+          </div></div>
+        </div>
+      </section>
+
+      <section id="leadership">
+        <h2><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Leadership</h2>
+        <div class="items">
+          <div class="item">
+            <span class="years">2024 to 2025</span>
             <h3>Director of Sports, Recreation and Well-being</h3>
             <p>Graduate Students, School of EEE, NTU Singapore.</p>
           </div>
-        </div>
-        <div class="edu-item">
-          <div class="years">2015 to 2022</div>
-          <div>
+          <div class="item">
+            <span class="years">2015 to 2022</span>
             <h3>Mentor, Junior Youth Spiritual Empowerment Program</h3>
             <p>Guided a group of 20 children in Udupi and Satara districts, India.</p>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <section class="block" id="Extracurricular">
-    <div class="wrap">
-      <h2>Extra-Curricular</h2>
-      <p class="role" style="margin-bottom: 24px;">Sports · Dancing · Reading</p>
-      <div class="skills">
-        <div class="skill">
-          <h3>Sports</h3>
-          <div style="display: grid; gap: 10px;">
-            <p><strong>Badminton, 2024 to 2026.</strong> First prize in tournaments organised by the Graduate Academy of Nanyang Technological University, the Indian Society in Singapore and the Singapore Tamil Society.</p>
-            <p><strong>Manipal Marathon, (2019,2020).</strong> First prize in Women's 5K Category.</p>
+      <section id="extracurricular">
+        <h2><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7z"/></svg>Extra-Curricular</h2>
+        <div class="rows">
+          <div class="row">
+            <h3>Sports</h3>
+            <div style="display: grid; gap: 8px;">
+              <p><strong>Badminton, 2024 to 2026.</strong> First prize in tournaments organised by the Graduate Academy of Nanyang Technological University, the Indian Society in Singapore and the Singapore Tamil Society.</p>
+              <p><strong>Manipal Marathon, (2019,2020).</strong> First prize in Women's 5K Category.</p>
+            </div>
           </div>
+          <div class="row"><h3>Cultural</h3><p>Helped organize and run several cultural events, and performed in group and featured dance performances at school and university showcases.</p></div>
+          <div class="row"><h3>Interests</h3><p>Passionate about wildlife and natural ecosystems, and an avid reader across psychology, philosophy, historical non-fiction and fiction.</p></div>
         </div>
-        <div class="skill">
-          <h3>Cultural</h3>
-          <p>Performed in multiple cultural programmes at School and University.</p>
-        </div>
-        <div class="skill">
-          <h3>Interests</h3>
-          <p>Passionate about wildlife and natural ecosystems, and an avid reader across psychology, philosophy, historical non-fiction and fiction.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+      </section>
+
+    </main>
+  </div>
+</div>
+
 <footer>
   <div class="wrap">
     <span>© 2026 Nilufer Tamatgar</span>
