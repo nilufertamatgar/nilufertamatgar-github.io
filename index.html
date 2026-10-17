@@ -40,6 +40,8 @@ header .wrap { display: flex; align-items: center; justify-content: space-betwee
 nav { display: flex; flex-wrap: wrap; gap: 4px 22px; font-size: 16px; }
 nav a { color: var(--muted); }
 nav a:hover { color: var(--text); text-decoration: none; }
+.menu-btn { display: none; align-items: center; gap: 6px; font: inherit; font-size: 16px; color: var(--text); background: none; border: 1px solid var(--line); border-radius: 6px; padding: 6px 12px; cursor: pointer; }
+.menu-btn svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; }
 
 /* Two-column layout */
 .layout { display: grid; grid-template-columns: 245px minmax(0, 1fr); gap: 28px; align-items: start; padding: 48px 0 72px; }
@@ -112,7 +114,11 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
 @media (max-width: 860px) {
   .layout { grid-template-columns: 1fr; gap: 40px; padding-top: 32px; }
   .profile { position: static; }
-  .photo { max-width: 180px; }
+  .photo { max-width: 180px; margin: 0 auto; border-radius: 50%; }
+  .menu-btn { display: inline-flex; }
+  nav { display: none; flex-basis: 100%; flex-direction: column; gap: 0; padding-top: 6px; }
+  nav.open { display: flex; }
+  nav a { padding: 10px 0; border-top: 1px solid var(--line); }
   .split, .pub, .row { grid-template-columns: 1fr; }
   .thumb { max-width: 320px; }
   section { padding: 24px 20px; }
@@ -125,7 +131,10 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
 <header>
   <div class="wrap">
     <a href="#" class="brand" title="Homepage - Nilufer Tamatgar">Nilufer Tamatgar</a>
-    <nav>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" onclick="var n=document.getElementById('site-nav');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o);">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>Menu
+    </button>
+    <nav id="site-nav" onclick="if(event.target.tagName==='A'){this.classList.remove('open');document.querySelector('.menu-btn').setAttribute('aria-expanded','false');}">
       <a href="#about">About</a>
       <a href="#education">Education</a>
       <a href="#publications">Publications</a>
